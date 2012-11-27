@@ -1,0 +1,55 @@
+#devise_layout {
+    font-family: 'Open Sans', sans-serif;
+    #header{
+        width: 400px;
+        margin: 60px auto 0 auto;
+    }
+
+    #container{
+        width: 400px;
+        margin: 30px auto 60px auto;
+        background: #F0EFE9;
+
+        h2 {
+            font-size: 28px;
+            line-height: 40px;
+            -moz-border-radius: 15px 15px 0px 0px;
+            -webkit-border-radius: 15px 15px 0px 0px;
+            border-radius: 15px 15px 0px 0px;
+            background-color: #E2E2E0;
+            padding: 10px 20px;
+        }
+        form{
+            padding: 25px 25px 25px 25px;
+            background: #F0EFE9;
+        }
+        input[type="text"], input[type="email"], input[type="password"] {
+            width: 318px;
+            font-size: 24px;
+            line-height: 28px;
+            padding: 4px 15px;
+            height: 36px;
+            margin-bottom: 20px;
+        }
+        label{
+            display: inline-block;
+            line-height: 25px;
+        }
+        a{
+            padding-left: 25px;
+            line-height: 25px;
+        }
+
+        #bottom{
+            font-size: 16px;
+            line-height: 20px;
+            text-align: center;
+            -moz-border-radius: 0px 0px 15px 15px;
+            -webkit-border-radius: 0px 0px 15px 15px;
+            border-radius: 0px 0px 15px 15px;
+            background-color: #E2E2E0;
+            padding: 10px 20px;
+        }
+
+    }
+}
