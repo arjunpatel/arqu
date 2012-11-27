@@ -9,5 +9,10 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require_self
+ *= require reset
+ *= require bootstrap
+ *= require bootstrap-responsive
+ *= require_tree ./m-styles
+ *= require global
  *= require_tree .
  */
