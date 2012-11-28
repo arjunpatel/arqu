@@ -1,48 +1,89 @@
 <h2>Edit <%= resource_name.to_s.humanize %></h2>
 
-<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f| %>
-  <%= devise_error_messages! %>
+<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => {:method => :put}) do |f| %>
+    <%= devise_error_messages! %>
 
-  <div><%= f.label :email %><br />
-  <%= f.email_field :email %></div>
+    <div><%= f.label :email %>
+      <br/>
+      <%= f.email_field :email %></div>
 
-  <div><%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
-  <%= f.password_field :password, :autocomplete => "off" %></div>
+    <div><%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br/>
+      <%= f.password_field :password, :autocomplete => "off" %></div>
 
-  <div><%= f.label :password_confirmation %><br />
-  <%= f.password_field :password_confirmation %></div>
+    <div><%= f.label :password_confirmation %>
+      <br/>
+      <%= f.password_field :password_confirmation %></div>
 
-  <div><%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
-  <%= f.password_field :current_password %></div>
+    <div><%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br/>
+      <%= f.password_field :current_password %></div>
 
     <h4>Profile Information</h4>
 
-  <div><%= f.label :first_name %><br />
-  <%= f.text_field :first_name %></div>
+    <div><%= f.label :first_name %>
+      <br/>
+      <%= f.text_field :first_name %></div>
 
-    <div><%= f.label :last_name %><br />
-  <%= f.text_field :last_name %></div>
+    <div><%= f.label :last_name %>
+      <br/>
+      <%= f.text_field :last_name %></div>
 
-  <div><%= f.label :city %><br />
-  <%= f.text_field :city %></div>
+    <div id="countries_states2" class="selectbox countries" data-flags="true" data-country="<%= current_user.country %>">
+      <%= f.hidden_field :country %>
+      <a class="selectbox-toggle" role="button" data-toggle="selectbox" href="#">
+        <span class="selectbox-option input-medium" data-option=""></span>
+        <b class="caret"></b>
+      </a>
 
-    <div><%= f.label :country %><br />
-  <%= f.text_field :country %></div>
+      <div class="selectbox-options">
+        <input type="text" class="selectbox-filter">
 
-    <div><%= f.label :age %><br />
-  <%= f.text_field :age %></div>
+        <ul role="options">
+        </ul>
+      </div>
+    </div>
 
-    <div><%= f.label :gender %><br />
-  <%= f.text_field :gender %></div>
+    <div class="selectbox states" data-country="countries_states2" data-state="<%= current_user.state %>">
+      <%= f.hidden_field :state %>
+      <a class="selectbox-toggle" role="button" data-toggle="selectbox" href="#">
+        <span class="selectbox-option input-medium" data-option=""></span>
+        <b class="caret"></b>
+      </a>
 
-    <div><%= f.label :native_language %><br />
-  <%= f.text_field :native_language %></div>
+      <div class="selectbox-options">
+        <input type="text" class="selectbox-filter">
+        <ul role="options">
+        </ul>
+      </div>
+    </div>
 
-  <div><%= f.submit "Update" %></div>
+    <div><%= f.label :age %>
+      <br/>
+      <%= f.text_field :age %></div>
+
+    <div><%= f.label :gender %>
+      <br/>
+      <%= f.text_field :gender %></div>
+
+    <div class="selectbox languages" data-language="<%= current_user.native_language %>" data-flags="true">
+      <%= f.hidden_field :native_language %>
+      <a class="selectbox-toggle" role="button" data-toggle="selectbox" href="#">
+        <span class="selectbox-option input-medium" data-option=""></span>
+        <b class="caret"></b>
+      </a>
+
+      <div class="selectbox-options">
+        <input type="text" class="selectbox-filter">
+        <ul role="options">
+        </ul>
+      </div>
+    </div>
+
+    <div><%= f.submit "Update" %></div>
 <% end %>
 
 <h3>Cancel my account</h3>
 
-<p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), :data => { :confirm => "Are you sure?" }, :method => :delete %>.</p>
+<p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), :data => {:confirm => "Are you sure?"}, :method => :delete %>
+  .</p>
 
 <%= link_to "Back", :back %>
