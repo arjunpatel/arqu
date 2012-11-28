@@ -14,5 +14,7 @@
  *= require bootstrap-responsive
  *= require_tree ./m-styles
  *= require global
+ *= require bootstrap-formhelpers
+ *= require bootstrap-formhelpers-countries.flags
  *= require_tree .
  */
