@@ -12,4 +12,15 @@
 //
 //= require jquery-1.8.2.min
 //= require jquery_ujs
+//= require bootstrap-formhelpers-countries.en_US
+//= require bootstrap-formhelpers-countries
+//= require bootstrap-formhelpers-states.en_US
+//= require bootstrap-formhelpers-states
+//= require bootstrap-formhelpers-phone.format
+//= require bootstrap-formhelpers-phone
+//= require bootstrap-formhelpers-languages.codes
+//= require bootstrap-formhelpers-languages
+//= require bootstrap-formhelpers-timezones.codes
+//= require bootstrap-formhelpers-timezones
+//= require bootstrap-formhelpers-selectbox
 //= require_tree .
