@@ -61,7 +61,7 @@ ActiveRecord::Schema.define(:version => 20121128215511) do
     t.string   "first_name"
     t.string   "last_name"
     t.string   "country"
-    t.string   "city"
+    t.string   "state"
     t.integer  "age"
     t.string   "gender"
     t.string   "native_language"
