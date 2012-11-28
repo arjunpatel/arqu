@@ -12,6 +12,31 @@
   <div><%= f.label :password_confirmation %><br />
   <%= f.password_field :password_confirmation %></div>
 
+  <hr>
+
+    <h4>Profile Information</h4>
+
+  <div><%= f.label :first_name %><br />
+  <%= f.text_field :first_name %></div>
+
+    <div><%= f.label :last_name %><br />
+  <%= f.text_field :last_name %></div>
+
+  <div><%= f.label :city %><br />
+  <%= f.text_field :city %></div>
+
+    <div><%= f.label :country %><br />
+  <%= f.text_field :country %></div>
+
+    <div><%= f.label :age %><br />
+  <%= f.text_field :age %></div>
+
+    <div><%= f.label :gender %><br />
+  <%= f.text_field :gender %></div>
+
+    <div><%= f.label :native_language %><br />
+  <%= f.text_field :native_language %></div>
+
   <div><%= f.submit "Sign up" %></div>
 <% end %>
 
