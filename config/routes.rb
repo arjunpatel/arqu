@@ -8,7 +8,8 @@ Arqu::Application.routes.draw do
 
   resources :dictionaries
 
-  match 'search/:query' => 'search#index', :via => :get
+  match 'search' => 'search#index', :via => :get
+  match 'search/result' => 'search#result', :via => :get
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
