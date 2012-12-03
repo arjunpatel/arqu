@@ -1,0 +1,42 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Arqu</title>
+  <%= stylesheet_link_tag "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,300,600,700' rel='stylesheet' type='text/css'>
+  <%= csrf_meta_tags %>
+</head>
+<body id="<%= params[:controller] %>_<%= params[:action] %>">
+
+<div id="header_lines"></div>
+
+<div id="container">
+	<h4>Add a word to our dictionary</h4>
+	<div id="word_info">
+		<br/>
+		<ul>
+			<%= render 'form' %>
+		</ul>
+	</div>
+	<div id="record_voice">
+			<li>Press Record then record your voice</li>
+			<li>Press Stop when finished recording</li>
+			<li>Click on "click here to save"</li>
+			<li>Copy and paste the sharing options link into Voice input box</li>
+		<iframe src="http://vocaroo.com/?minimal" width="525" height="450" frameborder="0"></iframe>
+	</div>
+</div>
+
+<div id="footer">
+  <div id="left">Project by UCSD students.</div>
+  <div id="right">GNU General Public License, version 3 (GPL 3.0)</div>
+</div>
+
+</body>
+</html>
+
+
+
+

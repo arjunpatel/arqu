@@ -1,4 +1,6 @@
 Arqu::Application.routes.draw do
+  resources :dictionaries
+
   ActiveAdmin.routes(self)
 
   devise_for :admin_users, ActiveAdmin::Devise.config
