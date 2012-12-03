@@ -1,11 +1,14 @@
 Arqu::Application.routes.draw do
-  resources :dictionaries
 
   ActiveAdmin.routes(self)
 
   devise_for :admin_users, ActiveAdmin::Devise.config
 
   devise_for :users
+
+  resources :dictionaries
+
+  match 'search/:query' => 'search#index', :via => :get
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
