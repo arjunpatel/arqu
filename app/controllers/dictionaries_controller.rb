@@ -2,11 +2,20 @@ class DictionariesController < InheritedResources::Base
 
 	#Bypass token authenticity
 	skip_filter :verify_authenticity_token
+	#before_filter :authenticate_admin!, :only => ["edit", "index"]
 
 	def create
 		user_id = params[:user_id].to_i
 		word = params[:word]
-		voice_id = /http:\/\/vocaroo.com\/i\/(\w+)/.match(params[:voice_id])[1]
+
+		begin
+			voice_id = /http:\/\/vocaroo.com\/i\/(\w+)/.match(params[:voice_id])[1]
+		rescue
+			flash[:notice] = "Invalid Voice File Input"
+			render :new
+			return false
+		end
+
 		description = params[:description] || ""
 
 		##Fetch current loggedin user
