@@ -27,20 +27,37 @@
           <% @result.each do |dict| %>
             <% @user = User.find(dict.user_id) %>
             <tr>
-              <td> <%= dict.word %> </td>
+              <td> <a href=<%= "#word_" + dict.word %> role="button" class="btn btn-success" data-toggle="modal"><%= dict.word %> <i class="icon-volume-up"></i></a> </td>
               <td> <%= @user.age %> </td>
               <td> <%= @user.gender %> </td>
               <td> <%= @user.country %> </td>
               <td> <%= @user.state %></td>
               <td> <%= @user.native_language %> </td>
             </tr>
+            <!-- Modal -->
+            <div id=<%= "word_#{dict.word}" %> class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h3 id="myModalLabel"><%= dict.word.capitalize %></h3><br />
+                <blockquote><%= dict.description %></blockquote>
+              </div>
+              <div class="modal-body">
+                <center><p>
+                  <object width="220" height="140"><param name="movie" value=<%= "http://vocaroo.com/mediafoo.swf?playMediaID=#{dict.voice_id}&autoplay=0" %>></param><embed src=<%= "http://vocaroo.com/mediafoo.swf?playMediaID=#{dict.voice_id}&autoplay=0" %> width="220" height="140" pluginspage="http://get.adobe.com/flashplayer/" type="application/x-shockwave-flash"></embed></object>
+                </p></center>
+              </div>
+              <div class="modal-footer">
+                <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+                <button class="btn btn-primary">Save changes</button>
+              </div>
+            </div>
            <% end %>
         <% end %>
         
       </tbody>
      </table>
   </div>
-  <a class="btn btn-primary" style="color:white;" href="/search">Advance Search</a> <a style="color:white;" class="btn btn-primary" href="/">Search Again</a>
+  <a class="btn btn-primary" style="color:white;" href="/search">Advanced Search</a> <a style="color:white;" class="btn btn-primary" href="/">Search Again</a>
 </div>
 
 <div id="footer">
