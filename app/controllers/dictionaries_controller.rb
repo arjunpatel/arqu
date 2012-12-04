@@ -21,6 +21,7 @@ class DictionariesController < InheritedResources::Base
 		end
 
 		render :new
-
 	end
+
+
 end

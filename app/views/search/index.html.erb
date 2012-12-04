@@ -13,25 +13,52 @@
 
 <div id="container">
   <div id="site_info_container">
-  <h4 class="alert alert-info"> Leave field blank/empty to ignore </h4>
-  <%= form_for @search, :url => "/search/result", :html => {:method => :get} do |f| %>
-  <%= f.label :word_contains %>
-  <%= f.text_field :word_contains %><br />
-  <%= f.label :user_gender_contains %>
-  <%= f.text_field :user_gender_contains %><br />
-  <%= f.label :user_age_gte %>
-  <%= f.text_field :user_age_gte %><br />
+  <h4 class="alert alert-info" style="width:60%;"> Leave field blank/empty to ignore </h4>
+  <%= form_for @search, :url => "/search/result", :html => {:method => :get, :class => ["form-horizontal"]} do |f| %>
 
-  <%= f.label :user_native_language_equals %>
-  <select id="search_user_native_language_equals" name="search[user_native_language_equals]" class="input-medium languages" data-language="en"></select><br /><br />
+  <div class="control-group">
+    <%= f.label :word_contains, :class => "control-label" %>
+    <div class="controls">
+      <%= f.text_field :word_contains %><br />
+    </div>
+  </div>
 
-  <%= f.label :user_country_equals %>
-  <select id="search_user_country_equals" name="search[user_country_equals]" class="input-medium countries" data-country="US"></select><br /><br />
+  <div class="control-group">
+    <%= f.label :user_gender_contains, :class => "control-label" %>
+    <div class="controls">
+      <%= f.text_field :user_gender_contains %><br />
+    </div>
+  </div>
 
-  <%= f.label :user_state_equals %>
-  <select id="search_user_state_equals" name="search[user_state_equals]" class="input-medium states" data-country="search_user_country_equals"></select><br /><br />
+  <div class="control-group">
+    <%= f.label :user_age_gte, :class => "control-label" %>
+    <div class="controls">
+      <%= f.text_field :user_age_gte %><br />
+    </div>
+  </div>
 
-  <%= f.submit %>
+  <div class="control-group">
+    <%= f.label :user_native_language_equals, :class => "control-label" %>
+    <div class="controls">
+      <select id="search_user_native_language_equals" name="search[user_native_language_equals]" class="input-medium languages" data-language="en"></select><br /><br />
+    </div>
+  </div>
+
+  <div class="control-group">
+    <%= f.label :user_country_equals, :class => "control-label" %>
+    <div class="controls">
+      <select id="search_user_country_equals" name="search[user_country_equals]" class="input-medium countries" data-country="US"></select><br /><br />
+    </div>
+  </div>
+
+  <div class="control-group">
+    <%= f.label :user_state_equals, :class => "control-label" %>
+    <div class="controls">
+      <select id="search_user_state_equals" name="search[user_state_equals]" class="input-medium states" data-country="search_user_country_equals"></select><br /><br />
+    </div>
+  </div>
+
+  <%= f.submit :class => ["btn btn-primary"] %>
 <% end %>
   </div>
 </div>
