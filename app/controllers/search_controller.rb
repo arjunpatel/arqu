@@ -1,13 +1,14 @@
 class SearchController < ApplicationController
 
 	def index
-		@search = User.search(params[:search])
+		@search = Dictionary.search(params[:search])
 	end
 
 	def result
-		@search = User.search(params[:search])
-  		@articles = @search.all 
-  		puts "DEBUG HERE --------------------- #{@articles} ------------------------"
+		@search = Dictionary.search(params[:search])
+  		@result = @search.all 
+  		flash[:notice] = "Unable to find any result that match your search criteria" if @result.length <= 0
+  		puts "DEBUG HERE --------------------- #{@result} ------------------------"
 	end
 
 end
