@@ -26,7 +26,11 @@
   <div class="control-group">
     <%= f.label :user_gender_contains, :class => "control-label" %>
     <div class="controls">
-      <%= f.text_field :user_gender_contains %><br />
+      <select id="search_user_gender_contains" name="search[user_gender_contains]" class="selectbox input-medium">
+        <option class="selectbox-option" value="">Don't Care</option>
+        <option class="selectbox-option" value="male">Male</option>
+        <option class="selectbox-option" value="female">Female</option>
+      </select><br/><br/>
     </div>
   </div>
 

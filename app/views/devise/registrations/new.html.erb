@@ -62,9 +62,15 @@
 
     <div><%= f.label :gender %>
       <br/>
-      <%= f.text_field :gender %></div>
+      <select id="user_gender" name="user[gender]" class="selectbox input-medium">
+        <option class="selectbox-option" value="male">Male</option>
+        <option class="selectbox-option" value="female">Female</option>
+      </select><br/><br/>
+    </div>
+
 
     <div class="selectbox languages" data-language="en" data-flags="true">
+      <%= f.label :native_language %><br/>
       <%= f.hidden_field :native_language %>
       <a class="selectbox-toggle" role="button" data-toggle="selectbox" href="#">
         <span class="selectbox-option input-medium" data-option=""></span>

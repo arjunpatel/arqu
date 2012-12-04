@@ -21,8 +21,8 @@
     <%= link_to "search", "#", :id => "search" %>
   </div>
   <div id="site_info_container">
-    Browse <span href="#" class="blue_text"><%= @unique_word_count %> words</span> in <span class="green_text"><%= @voice_count %> voices</span> from
-    <span class="oragne_text"><%= @country_count %> countries</span>.
+    <span><a href="#">Browse <span href="#" class="blue_text"><%= @unique_word_count %> words</span> in <span class="green_text"><%= @voice_count %> voices</span> from
+    <span class="orange_text"><%= @country_count %> countries</span>.</a></span>
   </div>
   <div id="signin_signup">
     <% if user_signed_in? %>
@@ -31,6 +31,11 @@
     <% else %>
         <%= link_to "Sign in", new_user_session_path %> or <%= link_to "Sign up", new_user_registration_path %> for your own profile.
     <% end %>
+
+    <% @latest_feed.each do |f| %>
+      
+    <% end %>
+
   </div>
 </div>
 

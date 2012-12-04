@@ -60,9 +60,13 @@
       <br/>
       <%= f.text_field :age %></div>
 
-    <div><%= f.label :gender %>
+        <div><%= f.label :gender %>
       <br/>
-      <%= f.text_field :gender %></div>
+      <select id="user_gender" name="user[gender]" class="selectbox input-medium">
+        <option class="selectbox-option" value="male">Male</option>
+        <option class="selectbox-option" value="female">Female</option>
+      </select><br/><br/>
+    </div>
 
     <div class="selectbox languages" data-language="<%= current_user.native_language %>" data-flags="true">
       <%= f.hidden_field :native_language %>
