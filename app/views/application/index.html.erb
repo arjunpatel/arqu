@@ -21,8 +21,8 @@
     <%= link_to "search", "#", :id => "search" %>
   </div>
   <div id="site_info_container">
-    Browse <span class="blue_text">9,134 words</span> in <span class="green_text">12,419 voices</span> from
-    <span class="oragne_text">34 countries</span>.
+    Browse <span class="blue_text"><%= @unique_word_count %> words</span> in <span class="green_text"><%= @voice_count %> voices</span> from
+    <span class="oragne_text"><%= @country_count %> countries</span>.
   </div>
   <div id="signin_signup">
     <% if user_signed_in? %>
