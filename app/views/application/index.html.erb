@@ -44,7 +44,7 @@
       <div class="modal-body">
         <center><p>
           <% @latest_feed.each do |f| %>
-            <%= f.word %> <br><strong>Age</strong> <%= f.user.age %> <strong>Country</strong> <span class="countries" data-country="<%= f.user.country %>" data-flags="true"></span>
+            <a href=<%= "search/result?utf8=✓&search%5Bword_contains%5D=#{f.word}&search%5Buser_gender_contains%5D=&search%5Buser_age_gte%5D=&commit=Create+Search" %> ><%= f.word %></a> <br><strong>Age</strong> <%= f.user.age %> <strong>Country</strong> <span class="countries" data-country="<%= f.user.country %>" data-flags="true"></span>
               <strong>Native Language</strong> <span class="languages" data-language="<%= f.user.native_language %>" data-flags="true"></span> <br/>
           <br>
           <% end %>
