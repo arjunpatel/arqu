@@ -1,5 +1,7 @@
 class DictionariesController < InheritedResources::Base
 
+  layout "inner_pages.html.erb"
+
 	#Bypass token authenticity
 	skip_filter :verify_authenticity_token
 	#before_filter :authenticate_admin!, :only => ["edit", "index"]

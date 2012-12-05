@@ -1,5 +1,7 @@
 class SearchController < ApplicationController
 
+  layout "inner_pages.html.erb"
+
 	def index
 		@search = Dictionary.search(params[:search])
 	end

@@ -1,0 +1,44 @@
+header.inner-page-header{
+    width:960px;
+    margin:0 auto;
+
+    section{
+        height: 60px;
+        line-height: 60px;
+        margin-top: 20px;
+
+        h1{
+            display:inline-block;
+            background: url('logo_small.png') no-repeat center center;
+            min-width:135px;
+            min-height: 60px;
+        }
+
+        div.userinfo{
+            float:right;
+            background-color:#EAEAEA;
+            padding: 0 25px;
+
+            span{
+                text-transform:lowercase;
+                color:#666666;
+                font-size:18px;
+            }
+        }
+    }
+}
+section.subsection{
+        width:960px;
+        margin:0 auto;
+        margin-top:30px;
+        height: 55px;
+        line-height:55px;
+        background-color: #333333;
+
+        div.add-voice{
+            color: #cccccc;
+            font-size: 28px;
+            text-transform:lowercase;
+            margin:0 15px;
+        }
+    }
