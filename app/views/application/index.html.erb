@@ -21,7 +21,7 @@
     <%= link_to "search", "#", :id => "search" %>
   </div>
   <div id="site_info_container">
-    <span><a href="#">Browse <span href="#" class="blue_text"><%= @unique_word_count %> words</span> in <span class="green_text"><%= @voice_count %> voices</span> from
+    <span><a href="#latest_feed" role="button" data-toggle="modal">Browse <span href="#" class="blue_text"><%= @unique_word_count %> words</span> in <span class="green_text"><%= @voice_count %> voices</span> from
     <span class="orange_text"><%= @country_count %> countries</span>.</a></span>
   </div>
   <div id="signin_signup">
@@ -35,6 +35,23 @@
     <% @latest_feed.each do |f| %>
       
     <% end %>
+
+    <div id="latest_feed" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <h3 id="myModalLabel">Latest 10 Words Submitted</h3><br />
+      </div>
+      <div class="modal-body">
+        <center><p>
+          <% @latest_feed.each do |f| %>
+            Word: <%= f.word %> Age <%= f.user.age %> Country <%= f.user.country %> Native Language <%= f.user.native_language %> <br/>
+          <% end %>
+        </p></center>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-primary" data-dismiss="modal" aria-hidden="true">Close</button>
+      </div>
+    </div>
 
   </div>
 </div>
