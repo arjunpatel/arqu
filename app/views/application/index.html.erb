@@ -44,7 +44,9 @@
       <div class="modal-body">
         <center><p>
           <% @latest_feed.each do |f| %>
-            Word: <%= f.word %> Age <%= f.user.age %> Country <%= f.user.country %> Native Language <%= f.user.native_language %> <br/>
+            <%= f.word %> <br><strong>Age</strong> <%= f.user.age %> <strong>Country</strong> <span class="countries" data-country="<%= f.user.country %>" data-flags="true"></span>
+              <strong>Native Language</strong> <span class="languages" data-language="<%= f.user.native_language %>" data-flags="true"></span> <br/>
+          <br>
           <% end %>
         </p></center>
       </div>

@@ -1,14 +1,7 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Arqu</title>
-  <%= stylesheet_link_tag "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
-  <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,300,600,700' rel='stylesheet' type='text/css'>
-  <%= csrf_meta_tags %>
-</head>
-<body id="<%= params[:controller] %>_<%= params[:action] %>">
-<div id="header_lines"></div>
+<section class="subsection">
+  <div class="add-voice">Search Results</div>
+</section>
+
 <div id="container">
   <div id="site_info_container">
     <table class="table table-hover">
@@ -30,9 +23,9 @@
               <td> <a href=<%= "#word_" + dict.word %> role="button" class="btn btn-success" data-toggle="modal"><%= dict.word %> <i class="icon-volume-up"></i></a> </td>
               <td> <%= @user.age %> </td>
               <td> <%= @user.gender %> </td>
-              <td> <%= @user.country %> </td>
-              <td> <%= @user.state %></td>
-              <td> <%= @user.native_language %> </td>
+              <td> <span class="countries" data-country="<%= @user.country %>" data-flags="true"></span> </td>
+              <td> <span class="states" data-country="<%= @user.country %>" data-state="<%= @user.state %>"></span></td>
+              <td> <span class="languages" data-language="<%= @user.native_language %>" data-flags="true"></span> </td>
             </tr>
             <!-- Modal -->
             <div id=<%= "word_#{dict.word}" %> class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -58,11 +51,3 @@
   </div>
   <a class="btn btn-primary" style="color:white;" href="/search">Advanced Search</a> <a style="color:white;" class="btn btn-primary" href="/">Search Again</a>
 </div>
-
-<div id="footer">
-  <div id="left">Project by UCSD students.</div>
-  <div id="right">GNU General Public License, version 3 (GPL 3.0)</div>
-</div>
-
-</body>
-</html>

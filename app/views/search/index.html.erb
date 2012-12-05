@@ -1,15 +1,6 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Arqu</title>
-  <%= stylesheet_link_tag "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
-  <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,300,600,700' rel='stylesheet' type='text/css'>
-  <%= csrf_meta_tags %>
-</head>
-<body id="<%= params[:controller] %>_<%= params[:action] %>">
-
-<div id="header_lines"></div>
+<section class="subsection">
+  <div class="add-voice">Search</div>
+</section>
 
 <div id="container">
   <div id="site_info_container">
@@ -66,11 +57,3 @@
 <% end %>
   </div>
 </div>
-
-<div id="footer">
-  <div id="left">Project by UCSD students.</div>
-  <div id="right">GNU General Public License, version 3 (GPL 3.0)</div>
-</div>
-
-</body>
-</html>
