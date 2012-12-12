@@ -30,7 +30,9 @@
   <section>
     <a href="/"><h1>&nbsp;</h1></a>
 
-    <div class="userinfo"><span>hello, <%= current_user.first_name %></span></div>
+    <% if current_user.present? %>
+        <div class="userinfo"><span>hello, <%= current_user.first_name %></span></div>
+    <% end %>
   </section>
 </header>
 
